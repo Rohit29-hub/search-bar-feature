@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", async function () {
           product.category.toLowerCase().includes(query)
       );
 
-      displayProducts(filteredProducts, query);
+      displayProducts(filteredProducts, e.target.value);
     });
   } catch (error) {
-    console.error("Error fetching data:", e.target.value);
+    console.error("Error fetching data:", error.message);
   }
 });
