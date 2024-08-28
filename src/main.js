@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     productsToDisplay.forEach((product) => {
       const productCard = document.createElement("div");
       productCard.className =
-        "bg-white p-4 border border-gray-200 rounded-lg shadow-lg max-w-xs";
+        "bg-white p-4 sm:w-auto w-full border border-gray-200 rounded-lg shadow-lg max-w-xs";
 
       productCard.innerHTML = `
             <img src="${product.image_url}" alt="${product.description}" class="w-full h-48 object-cover rounded-t-lg mb-4">
-            <h3 class="text-lg font-semibold mb-2">${product.category}</h3>
+            <h3 class="text-lg font-semibold  mb-2">${product.category}</h3>
             <p class="text-sm text-gray-600 mb-2">${product.description}</p>
             <span class="text-xl font-bold">$${product.price}</span>
         `;
