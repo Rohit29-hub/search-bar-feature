@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       productCard.innerHTML = `
             <img src="${product.image_url}" alt="${product.description}" class="w-full h-48 object-cover rounded-t-lg mb-4">
-            <h3 class="text-lg font-semibold  mb-2">${product.category}</h3>
-            <p class="text-sm text-gray-600 mb-2">${product.description}</p>
+            <p class="text-base  mb-2">${product.description}</p>
+            <h3 class="text-sm text-gray-600 font-semibold mb-2">${product.category}</h3>
             <span class="text-xl font-bold">$${product.price}</span>
         `;
 
