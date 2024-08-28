@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Search Bar</title>
+</head>
+
+<body class="flex flex-col items-center p-4">
+  <!-- search bar -->
+  <div class="mb-4 p-2 border border-gray-300 rounded-lg w-full relative flex max-w-lg shadow-sm ">
+    <div class="shrink-0 px-2">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <input type="text" id="search-bar" placeholder="Search for products..."
+      class="flex-1 text-base font-semibold outline-none">
+  </div>
+
+  <!-- products container -->
+  <div id="card_container" class="flex flex-wrap gap-4 justify-center w-full max-w-screen-lg">
+
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
