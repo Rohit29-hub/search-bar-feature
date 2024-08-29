@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const searcher = new Fuzzy(products, {
         isCaseSensitive: false,
+        threshold: 0.3,
+        distance: 100,
         keys: ["description", "category"],
       });
 
