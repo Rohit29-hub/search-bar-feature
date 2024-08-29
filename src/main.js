@@ -1,5 +1,6 @@
 import "./style.css";
 import { getProduct } from "./utils/fetchProducts";
+import Fuzzy from "fuse.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const cardContainer = document.getElementById("card_container");
@@ -39,11 +40,17 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (e.target.value.length < 3 && e.target.value.length != 0) return;
 
       const query = e.target.value.toLowerCase();
-      const filteredProducts = products.filter(
-        (product) =>
-          product.description.toLowerCase().includes(query) ||
-          product.category.toLowerCase().includes(query)
-      );
+
+      const searcher = new Fuzzy(products, {
+        isCaseSensitive: false,
+        keys: ["description", "category"],
+      });
+
+      let filteredProducts = searcher.search(query).map(result => result.item);
+      
+      if(filteredProducts.length == 0){
+          filteredProducts = products;
+      }
 
       displayProducts(filteredProducts, e.target.value);
     });
